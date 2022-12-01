@@ -5,7 +5,7 @@
 import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 
-const API_URL = `https://www.omdbapi.com/?apikey=37edce58&s=batman`;
+const API_URL = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=batman`;
 const AppContext = React.createContext();
 
 // need to create a global fucntion
