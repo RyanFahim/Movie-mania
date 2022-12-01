@@ -1,0 +1,34 @@
+.grid-3-col{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 80%;
+    margin: auto;
+    padding: 3rem;
+  }
+
+  
+.card{
+    display: grid;
+    border: 1px solid red;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin: 2rem;
+    height: 550px;
+    max-height: 550x;
+}
+
+.card-info{
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
