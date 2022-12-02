@@ -5,7 +5,7 @@
 import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 
-const API_URL = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=batman`;
+export const API_URL = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}`;
 const AppContext = React.createContext();
 
 // need to create a global fucntion
@@ -16,8 +16,11 @@ const AppProvider = ({children})=>{
     const [isLoading,setIsLoading] =useState(true)
     const [isError, setIsError] = useState({ show:"false", msg:""});
     const [movie,setMovie] = useState([])
+    const [query, setQuery] = useState('batman');
 
+    // console.log(query);
     const getMovies = async(url) =>{
+        setIsLoading(true);
         try{
             const res = await fetch(url);
             const data = await res.json();
@@ -41,10 +44,15 @@ const AppProvider = ({children})=>{
     };
 
     useEffect(()=>{
-         getMovies(API_URL)
-    },[])
+        let timer = setTimeout(()=>{
+            getMovies(`${API_URL}&s=${query}`);
+        }, 1000);
 
-    return <AppContext.Provider value= {{isError, isLoading, movie}}>
+        return ()=> clearTimeout(timer);
+
+    },[query])
+
+    return <AppContext.Provider value= {{isError,setIsError, isLoading, movie, query, setQuery}}>
         {children}
     </AppContext.Provider>
 };
