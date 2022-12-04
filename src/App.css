@@ -9,7 +9,11 @@ body{
     font-family: 'Alegreya Sans', sans-serif;
 }
 
-.home-h1,
+
+.home-h1{
+    display: grid;
+    justify-content: center;
+}
 .search-h2, .search-form{
     display: flex;
     justify-content: center;
@@ -25,6 +29,7 @@ body{
     -webkit-text-stroke-color: #000000;
     margin-bottom: 2rem;
     font-size: 5rem;
+    margin: auto;
 }
 
 .form-input{
@@ -43,7 +48,7 @@ body{
 
 .grid-3-col{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(4,1fr);
     justify-content: center;
     align-items: center;
     /* background-color: white; */
@@ -89,7 +94,166 @@ body{
     align-items: center;
     text-align: center;
 }
+.movie_title{
+    font-size: 2.1rem;
+    color: #000000;
+    font-weight: bold;
+}
+a{
+    text-decoration: none;
+}
 
 .movie_poster{
     border-radius: 10px;
 }
+
+
+/* Single movie */
+.movie-section{
+    display: grid;
+    justify-content: center;
+    margin-top: 3rem;
+    place-items: center;
+    margin-bottom: 5rem;
+}
+figure, .title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.movie-card{
+    display: grid;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 2rem;
+    width: max-content;
+    box-shadow: 10px 10px rgb(59, 59, 59);
+    max-width: 50%;
+    
+}
+
+.card-content .title{
+    font-size: 2rem;
+}
+
+.card-text{
+    font-size: 1rem;
+}
+span{
+    font-weight: bold;
+}
+
+.back-btn{
+    border: 1px solid black;
+    padding: 0.8rem;
+    border-radius: 15px;
+    color: black;
+    background-color: #C8566B;
+    box-shadow: 5px 5px black;
+    transition: 0.3s;
+    font-size: large;
+    
+}
+.back-btn:hover{
+    box-shadow: 0 0 black;
+}
+
+
+/* Media Query */
+/* BREAKPOINTS */
+
+/* For large devices */
+
+@media screen and (max-width:1580px) {
+    .grid-3-col{
+        grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+
+@media screen and (max-width:1100px) {
+    .grid-3-col{
+        grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* For medium devices */
+  @media screen and (max-width:768px) {
+    .grid-3-col{
+        grid-template-columns: repeat(1, 1fr);
+    }
+  
+  }
+
+  @media screen and (max-width:650px) {
+   .movie-card{
+    width: 20rem;
+    max-width: 20rem;
+   }
+
+   h3{
+    
+    font-size: 200px;
+   }
+
+   img{
+    width: 250px;
+    aspect-ratio: 1/1.25;
+   }
+}
+
+@media screen and (max-width:420) {
+    .movie-card{
+        width: 18rem;
+        /* max-width: 100%; */
+        padding: 1rem;
+        border: white;
+       }
+       img{
+        width: 100px;
+        aspect-ratio: 1/1.25;
+       }
+       .home-h1{
+        color: white;
+       }
+        
+
+       h3{
+        font-size: 200px;
+       }
+ }
+
+  
+  @media screen and (max-width:500px) {
+    .home-h1{
+        font-size: 3rem;
+    }
+  }
+  
+  
+  /* For small devices */
+  @media screen and (max-width:350px) {
+    .home-h1{
+        font-size: 2.5rem;
+    }
+    .search-h2{
+        font-size: 23px;
+    }
+    
+    
+    .movie-card{
+        max-width: 10rem;
+       }
+    
+       img{
+        width: 150px;
+        aspect-ratio: 1/1.25;
+       }
+  }
+  @media screen and (max-width:420px){
+    .movie-card{
+        
+       }
+  }
