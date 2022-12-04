@@ -62,14 +62,27 @@ if(isLoading){
 
           <div className="card-content">
             <h3 className="title"> {movie.Title} </h3>
-            <p className="card-text"> {movie.Release} </p>
-            <p className="card-text"> {movie.Genre} </p>
-            <p className="card-text"> {movie.imdbRating} </p>
-            <p className="card-text"> {movie.Country} </p>
+            <center>
+              <p className="card-text"> {movie.Plot} </p>
+            </center>
+            <p className="card-text"> <span>Release Date:</span> {movie.Released} </p>
+            <p className="card-text"> <span>Genre:</span> {movie.Genre} </p>
+            <p className="card-text"> <span>Runtme:</span> {movie.Runtime} </p>
+            <p className="card-text"> <span>Director: </span>{movie.Director} </p>
+            <p className="card-text"> <span>Writer: </span>{movie.Writer} </p>
+            <p className="card-text"> <span>Actors: </span>{movie.Actors} </p>
+            <p className="card-text"> <span>Country: </span>{movie.Country} </p>
+            <p className="card-text"> <span>Language: </span>{movie.Language} </p>
+            <p className="card-text"> <span>Awards: </span>{movie.Awards} </p>
+            <p className="card-text"> <span>IMBD: </span> {movie.imdbRating} </p>
+            <p className="card-text"> <span>Rotten Tomatos </span>{movie.Ratings[1].Value} </p>
+            <p className="card-text"> <span>Box-office: </span>{movie.BoxOffice} </p>
 
+              <br />
             <NavLink to ="/" className= "back-btn">
               Go back
             </NavLink>
+            <br />
           </div>
         </div>
       </div>

@@ -7,7 +7,7 @@ const Home = () => {
     
   return (
     <>
-    <h1 className= "home-h1">Movie Mania</h1>
+    <h1 className= "home-h1" style={{margin: "auto"}}>Movie Mania</h1>
         <Search/>
         <Movie/>
         

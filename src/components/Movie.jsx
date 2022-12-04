@@ -14,10 +14,10 @@ const Movie = () => {
               const {imdbID, Title, Poster} = curMovie;
               const movieName = Title.substring(0, 15);
               return(
-                <NavLink to={`movie/${imdbID}`}>
+                <NavLink to={`movie/${imdbID}`} target="_blank">
                   <div className="card">
                     <div className="card-info">
-                      <h2> {movieName.length>=15 ? `${movieName}...`: movieName} </h2>
+                      <a className= "movie_title" > {movieName.length>=15 ? `${movieName}...`: movieName} </a>
                       <img src= {Poster} alt= {imdbID} className= "movie_poster" />
                     </div>
                   </div>
